@@ -27,3 +27,5 @@ dump.rdb
 .DS_Store
 .vscode/
 .idea/
+data/videos/
+*.mp4
