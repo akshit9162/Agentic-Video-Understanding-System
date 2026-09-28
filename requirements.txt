@@ -5,6 +5,7 @@ streamlit
 yt-dlp
 transformers
 torch
+torchvision
 opencv-python
 numpy
 Pillow
@@ -20,3 +21,6 @@ llama-index-embeddings-huggingface
 llama-index-llms-anthropic
 sentence-transformers
 python-dotenv
+ftfy
+regex
+git+https://github.com/openai/CLIP.git

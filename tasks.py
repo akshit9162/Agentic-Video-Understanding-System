@@ -7,7 +7,6 @@ import uuid
 import yt_dlp
 
 from celery_app import celery_app
-from src.inference import run_inference
 
 
 @celery_app.task(bind=True)
@@ -58,6 +57,10 @@ def summarize_video_task(self, source_type, source_value, ratio=0.2):
         def _progress_callback(value, message):
             pct = 35 + int(float(value) * 65)
             self.update_state(state="PROGRESS", meta={"progress": pct, "stage": message})
+
+        # Imported here, not at module level: it loads CLIP, Whisper and torch, which only
+        # the Celery worker needs. The API process imports this module too and stays light.
+        from src.inference import run_inference
 
         result = run_inference(
             local_video,

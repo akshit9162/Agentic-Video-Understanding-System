@@ -2,6 +2,7 @@ FROM python:3.11-slim
 
 # System deps: FFmpeg + OpenCV runtime libs
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
     ffmpeg \
     libgl1 \
     libglib2.0-0 \
