@@ -29,3 +29,5 @@ dump.rdb
 .idea/
 data/videos/
 *.mp4
+.impeccable/
+.hallmark/
